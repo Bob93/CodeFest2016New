@@ -1,14 +1,23 @@
-<?php
-include '../connector.php';
 
+<div class="row">
+    <div class="col-lg-12">
+
+    </div>
+</div>
+<div class="menu-info">
+    <div class="form-group">
+
+    </div>
+
+    <h3>Registratie vakantiedagen</h3><br>
+
+
+<?php
 $sth = $dbh ->prepare("SELECT beschrijving, datum_van, datum_tot FROM feestdagen");
 $sth->execute();
 
 
-echo "<table border='1'>
-<tr>
-<th>Vakantiedagen</th>
-</tr>";
+
 
 while($row = $sth->fetch(PDO::FETCH_ASSOC))
 {
@@ -18,11 +27,18 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
     $datetime_tot = $row['datum_tot'];
     $date_tot = date('d/m/Y', strtotime($datetime_tot));
     echo
-    "<tr>
+    "<table border='1'>
+    <tr>
+        <td>Vakantie dagen</td>
+        <th>Datum van</th>
+        <th>Datum tot</th>
+    </tr>
+    <tr>
+
         <td>" . $row['beschrijving'] . "</td>
     </tr>
     <tr>
-        <th> Datum van</th>
+
     </tr>
     <tr>
         <td>
@@ -30,7 +46,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
         </td>
     </tr>
     <tr>
-        <th> Datum tot</th>
+
     </tr>
     <tr>
         <td>
@@ -42,7 +58,34 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
 echo "</table>";
 ?>
 
-<input type="text" value="beschrijving">
-<input type="date" value="datum van">
-<input type="date" value="datum tot">
-<input type="submit" value="toevoegen" name="submit" class="sub_btn">
+    <form name="registratie" method="POST" action="registratie_vakantiedagen.php">
+        <table border="0" cellspacing="15px">
+            <tr>
+                <td colspan="2"><?php if(isset($error))echo $error; ?></td>
+            </tr>
+            <tr>
+                <td><p>Beschrijving</p></td>
+                <td>
+                    <input type="text" name="beschrijving" class="inp_box" value="<?php if(isset($_POST['beschrijving'])) echo $_POST['beschrijving'];?>" required>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Datum van</p></td>
+                <td>
+                    <input type="date" name="datum_van" class="inp_box" value="<?php if(isset($_POST['datum_van'])) echo $_POST['datum_van'];?>" required>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Datum tot</p></td>
+                <td>
+                    <input type="date" name="datum_tot" class="inp_box" value="<?php if(isset($_POST['datum_tot'])) echo $_POST['datum_tot'];?>" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="registreren" name="submit" class="sub_btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

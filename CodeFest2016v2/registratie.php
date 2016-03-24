@@ -32,7 +32,17 @@
                 <tr>
                     <td><p>Gebruikersnaam</p></td>
                     <td>
-                        <input type="gebruikersnaam"  name="gebruikersnaam" class="inp_box" value="<?php if(isset($_POST['gebruikersnaam'])) echo $_POST['gebruikersnaam'];?>" required>
+                        <input type="text"  name="gebruikersnaam" class="inp_box" value="<?php if(isset($_POST['gebruikersnaam'])) echo $_POST['gebruikersnaam'];?>" required>
+                </tr>
+                <tr>
+                    <td><p>Werknemernummer</p></td>
+                    <td>
+                        <input type="number"  name="werknemernummer" class="inp_box" value="<?php if(isset($_POST['gebruikersnaam'])) echo $_POST['gebruikersnaam'];?>" required>
+                </tr>
+                <tr>
+                    <td><p>deeltijdfactor</p></td>
+                    <td>
+                        <input type="number" step="0.01" name="deeltijdfactor" class="inp_box" value="<?php if(isset($_POST['gebruikersnaam'])) echo $_POST['gebruikersnaam'];?>" required>
                 </tr>
                 <tr>
                     <td><p>Wachtwoord</p></td>

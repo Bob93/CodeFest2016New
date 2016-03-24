@@ -103,6 +103,9 @@ include 'connector.php';
                     case  'overzicht':
                         include 'includes/overzicht.inc.php';
                         break;
+                    case  'registratie':
+                        include 'includes/registratie.inc.php';
+                        break;
                     default:
                         include 'includes/verlof.inc.php';
                         break;

@@ -16,14 +16,10 @@ include 'connector.php';
         $wachtwoord = $_POST['wachtwoord'];
         $geslacht = $_POST['geslacht'];
         $geboortedatum = $_POST['geboortedatum'];
+        $werknemernummer = $_POST['werknemernummer'];
+        $deeltijdfactor = $_POST['deeltijdfactor'];
 
-echo $voornaam;
-echo $tussenvoegsel;
-echo $achternaam;
-echo $gebruikersnaam;
-echo $wachtwoord;
-echo $geslacht;
-echo $geboortedatum;
+
 
         $sql = "INSERT INTO person
             (voornaam,tussenvoegsel,achternaam,gebruikersnaam,wachtwoord,geslacht,geboortedatum, deeltijdfactor, afdeling_ID, type_ID, datum_in_dienst, werknemernummer)
@@ -40,12 +36,12 @@ echo $geboortedatum;
         $sth->bindParam(':deeltijdfactor', $deeltijdfactor = 1);
         $sth->bindParam(':afdeling_ID', $afdeling_ID = 1);
         $sth->bindParam(':type_ID', $type_ID = 1);
-        $sth->bindParam(':werknemernummer', $werknemernummer = 00342324);
+        $sth->bindParam(':werknemernummer', $werknemernummer);
         $sth->bindParam(':datum_in_dienst', $datum_in_dienst = date('Y-m-d '));
         $sth->execute();
         if($sth){
             echo "Succesvol geregistreerd";
         }
 
-
+header("location: home.php?page=registratie")
 ?>

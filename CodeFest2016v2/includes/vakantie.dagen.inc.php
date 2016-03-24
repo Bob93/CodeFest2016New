@@ -17,7 +17,11 @@ $sth = $dbh ->prepare("SELECT beschrijving, datum_van, datum_tot FROM feestdagen
 $sth->execute();
 
 
-
+echo '<table border="1"><tr>
+        <th>Vakantie dagen</th>
+        <th>Datum van</th>
+        <th>Datum tot</th>
+    </tr>';
 
 while($row = $sth->fetch(PDO::FETCH_ASSOC))
 {
@@ -28,31 +32,18 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
     $date_tot = date('d/m/Y', strtotime($datetime_tot));
     echo
     "<table border='1'>
-    <tr>
-        <td>Vakantie dagen</td>
-        <th>Datum van</th>
-        <th>Datum tot</th>
-    </tr>
+
     <tr>
 
         <td>" . $row['beschrijving'] . "</td>
-    </tr>
-    <tr>
-
-    </tr>
-    <tr>
-        <td>
+         <td>
+        " . $date_tot ."
+        </td>
+           <td>
         " . $date_van ."
         </td>
     </tr>
-    <tr>
-
-    </tr>
-    <tr>
-        <td>
-        " . $date_tot ."
-        </td>
-    </tr>";
+";
 
 }
 echo "</table>";

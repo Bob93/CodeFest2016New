@@ -106,6 +106,9 @@ include 'connector.php';
                     case 'verlofbeoordelen':
                         include 'includes/verlofbeoordelen.inc.php';
                         break;
+                    case 'vakantiedagen':
+                        include 'includes/vakantie.dagen.inc.php';
+                        break;
                     default:
                         include 'includes/verlof.inc.php';
                         break;

@@ -57,12 +57,15 @@ include 'connector.php';
                         </li>
                         <li>
                             <a href="?page=urenregistratie">Uren</a>
-                        </li>
-                        <li>
-                            <a href="#">Overzicht</a>
                         </li>';}?>
                         <?php if($_SESSION['type_ID'] == 2) {
                         echo '
+                           <li>
+                            <a href="?page=vakantiedagen">Feestdagen Registratie</a>
+                        </li>
+                        <li>
+                            <a href="?page=overzicht">Overzicht</a>
+                        </li>
                         <li>
                             <a href="?page=registratie">Nieuwe Medewerker</a>
                         </li>';
@@ -98,7 +101,7 @@ include 'connector.php';
                         include 'includes/urenregistratie.inc.php';
                         break;
                     case  'overzicht':
-                        include 'includes/overzicht.inc.php';
+                        include 'includes/overzicht_medewerker.inc.php';
                         break;
                     case  'registratie':
                         include 'includes/registratie.inc.php';

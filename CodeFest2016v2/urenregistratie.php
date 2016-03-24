@@ -25,5 +25,5 @@ $sth->bindParam(':project_ID',$project_ID);
 $sth->bindParam(':datum',$datum);
 $sth->execute();
 
-// header("location: index.php")
+ header("location: index.php")
 ?>

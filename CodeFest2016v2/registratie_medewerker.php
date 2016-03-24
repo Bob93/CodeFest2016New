@@ -18,6 +18,7 @@ include 'connector.php';
         $geboortedatum = $_POST['geboortedatum'];
         $werknemernummer = $_POST['werknemernummer'];
         $deeltijdfactor = $_POST['deeltijdfactor'];
+        $typewerknemer = $_POST['typewerknemer'];
 
 
 
@@ -35,12 +36,12 @@ include 'connector.php';
         $sth->bindParam(':geboortedatum', $geboortedatum);
         $sth->bindParam(':deeltijdfactor', $deeltijdfactor = 1);
         $sth->bindParam(':afdeling_ID', $afdeling_ID = 1);
-        $sth->bindParam(':type_ID', $type_ID = 1);
+        $sth->bindParam(':type_ID', $typewerknemer);
         $sth->bindParam(':werknemernummer', $werknemernummer);
         $sth->bindParam(':datum_in_dienst', $datum_in_dienst = date('Y-m-d '));
         $sth->execute();
         if($sth){
-            echo "Succesvol geregistreerd";
+            $_SESSION['msg'] = "Succesvol geregistreerd";
         }
 
 header("location: home.php?page=registratie")

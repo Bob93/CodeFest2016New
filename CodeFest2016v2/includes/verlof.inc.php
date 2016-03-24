@@ -23,7 +23,7 @@
             <input type="date" name="vandatum" id="Van-Datum1" tabindex="1" class="form-control" placeholder="Van" value="" required>
             Tot Datum:
             <input type="date" name="totdatum" id="Tot-Datum1" tabindex="2" class="form-control" placeholder="Tot" value="" required>
-           <button type="submit" value="Submit">Submitje</button>
+           <button type="submit" value="Submit">Aanvragen</button>
         </form>
 
 

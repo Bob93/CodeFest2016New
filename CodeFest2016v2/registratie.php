@@ -1,4 +1,24 @@
+<?php
+include 'connector.php';
+$sth = $dbh ->prepare("SELECT MAX(werknemernummer), voornaam FROM person");
+$sth->execute();
+
+while($person = $sth->fetch(PDO::FETCH_ASSOC)) {
+    var_dump($person['werknemernummer']);
+    var_dump($person['voornaam']);
+}
+
+
+?>
+
+
+
+
+
 <body>
+
+
+
         <form name="registratie" method="POST" action="registratie_medewerker.php">
             <table border="0" cellspacing="15px">
                 <tr>
@@ -7,8 +27,12 @@
                 <tr>
                     <td>
                         <h1>
-                            Registratie medewerker
+                            Registratie medewerkers
                         </h1>
+
+
+
+
                     </td>
                 </tr>
                 <tr>

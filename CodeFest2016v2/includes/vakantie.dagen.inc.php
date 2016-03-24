@@ -74,7 +74,7 @@ echo "</table>";
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="registreren" name="submit" class="sub_btn">
+                    <input type="submit" value="Toevoegen" name="submit" class="sub_btn">
                 </td>
             </tr>
         </table>

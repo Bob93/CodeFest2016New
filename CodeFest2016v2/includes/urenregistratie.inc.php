@@ -38,7 +38,4 @@
         <button type="submit" value="Submit">Submitje</button>
     </form>
 
-    <form action="uitloggen.php" method="get">
-        <button type="submit">Uitloggen</button>
-    </form>
 </div>

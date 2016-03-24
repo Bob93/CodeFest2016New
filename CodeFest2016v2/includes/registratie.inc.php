@@ -1,4 +1,13 @@
+<?php
+$sth = $dbh ->prepare("SELECT max(werknemernummer)FROM person");
+$sth->execute();
 
+while($person = $sth->fetch(PDO::FETCH_ASSOC)) {
+    $testje = $person['max(werknemernummer)'];
+}
+
+
+?>
 <div class="row">
     <div class="col-lg-12">
 
@@ -42,13 +51,23 @@
             <tr>
                 <td><p>Werknemernummer</p></td>
                 <td>
-                    <input type="number"  name="werknemernummer" class="inp_box" value="<?php if(isset($_POST['gebruikersnaam'])) echo $_POST['gebruikersnaam'];?>" required>
+                    <input type="number"  name="werknemernummer" value="<?php echo $testje + 1 ?>" class="inp_box" required>
             </tr>
             <tr>
                 <td><p>deeltijdfactor</p></td>
                 <td>
                     <input type="number" step="0.01" name="deeltijdfactor" class="inp_box" value="<?php if(isset($_POST['gebruikersnaam'])) echo $_POST['gebruikersnaam'];?>" required>
             </tr>
+            <td><p>Type Werknemer</p></td>
+            <td>
+                <select name="typewerknemer">
+                    <option value=1>Werknemer</option>
+                    <option value=2>Administratief</option>
+                    <option value=3>Systeembeheer</option>
+                    <option value=4>Manager</option>
+                </select>
+                </td>
+                </tr>
             <tr>
                 <td><p>Wachtwoord</p></td>
                 <td>
@@ -83,6 +102,12 @@
             </tr>
         </table>
     </form>
+    <?php
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    ?>
 
 
 </div>

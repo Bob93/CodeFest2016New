@@ -62,19 +62,7 @@ include 'connector.php';
                         <?php if($_SESSION['type_ID'] == 2) {
                         echo '
                         <li>
-                            <a href="#">Werknemertoevoegen</a>
-                        </li>
-                        <li>
-                            <a href="#">Werknemer updaten</a>
-                        </li>
-                        <li>
-                            <a href="#">Werknemer verwijderen</a>
-                        </li>
-                        <li>
-                            <a href="#">Overzichten</a>
-                        </li>
-                        <li>
-                            <a href="#">Parameters</a>
+                            <a href="?page=verlofbeoordelen">Accepteren/Afwijzen verlof</a>
                         </li>';
                     };?>'
                     <li>
@@ -105,6 +93,9 @@ include 'connector.php';
                         break;
                     case  'registratie':
                         include 'includes/registratie.inc.php';
+                        break;
+                    case 'verlofbeoordelen':
+                        include 'includes/verlofbeoordelen.inc.php';
                         break;
                     default:
                         include 'includes/verlof.inc.php';

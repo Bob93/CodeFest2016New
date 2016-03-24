@@ -11,6 +11,8 @@ function checkType($user_role, $check_role){
 	}
 	return false;
 }
+
+
 ?>
 
 

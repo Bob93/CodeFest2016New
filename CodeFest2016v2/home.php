@@ -77,6 +77,9 @@ include 'connector.php';
                             <a href="#">Parameters</a>
                         </li>';
                     };?>'
+                    <li>
+                        <a href="uitloggen.php">Uitloggen</a>
+                    </li>
                 </ul>
 
             </div>

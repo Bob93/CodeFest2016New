@@ -30,6 +30,7 @@ if ($sth->rowCount() == 1){
     $_SESSION['type_ID'] = $result['type_ID'];
     // ik wil pushen
     $_SESSION['login'] = 'home.php?page=verlof';
+    $_SESSION['ingelogd'] = true;
     echo 'goedzo';
     header("location: index.php");
 }else{

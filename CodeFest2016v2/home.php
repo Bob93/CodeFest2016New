@@ -50,6 +50,8 @@ include 'connector.php';
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <?php if($_SESSION['type_ID'] == 1) {
+                    echo '
                         <li>
                             <a href="?page=verlof">Verlof</a>
                         </li>
@@ -58,13 +60,20 @@ include 'connector.php';
                         </li>
                         <li>
                             <a href="#">Overzicht</a>
-                        </li>
+                        </li>';}?>
                         <?php if($_SESSION['type_ID'] == 2) {
                         echo '
                         <li>
-                            <a href="?page=verlofbeoordelen">Accepteren/Afwijzen verlof</a>
+                            <a href="?page=registratie">Nieuwe Medewerker</a>
                         </li>';
                     };?>'
+                    <?php if($_SESSION['type_ID'] == 4) {
+                        echo'
+                                                <li>
+                            <a href="?page=verlofbeoordelen">Accepteren/Afwijzen verlof</a>
+                        </li>
+                        ';
+                    }?>
                     <li>
                         <a href="uitloggen.php">Uitloggen</a>
                     </li>

@@ -29,7 +29,17 @@ if ($sth->rowCount() == 1){
     $_SESSION['werknemernummer'] = $result['werknemernummer'];
     $_SESSION['type_ID'] = $result['type_ID'];
     // ik wil pushen
-    $_SESSION['login'] = 'home.php?page=verlof';
+    switch ($_SESSION['type_ID']) {
+        case 1:
+            $_SESSION['login'] = 'home.php?page=verlof';
+            break;
+        case 2;
+            $_SESSION['login'] = 'home.php?page=registratie';
+            break;
+        case 4:
+            $_SESSION['login'] = 'home.php?page=verlofbeoordelen';
+            break;
+    }
     $_SESSION['ingelogd'] = true;
     echo 'goedzo';
     header("location: index.php");
